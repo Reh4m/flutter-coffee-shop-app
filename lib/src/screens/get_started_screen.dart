@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/home_screen.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +73,7 @@ class GetStartedScreen extends StatelessWidget {
                           height: 56,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Acción al presionar el botón
+                              Navigator.of(context).push(_createRoute());
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Theme.of(context).primaryColor,
@@ -99,6 +100,27 @@ class GetStartedScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+      pageBuilder:
+          (context, animation, secondaryAnimation) => const HomeScreen(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween = Tween(
+          begin: begin,
+          end: end,
+        ).chain(CurveTween(curve: curve));
+
+        final offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
     );
   }
 }
