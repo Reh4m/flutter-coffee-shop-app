@@ -1,4 +1,4 @@
-import 'package:coffe_shop_app/src/screens/home_screen.dart';
+import 'package:coffe_shop_app/src/screens/home/home_screen.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
