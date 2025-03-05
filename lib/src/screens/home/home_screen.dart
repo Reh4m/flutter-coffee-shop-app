@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
-      height: 50,
+      height: 40,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,

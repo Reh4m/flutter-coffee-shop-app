@@ -9,7 +9,7 @@ class CategoryCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        margin: const EdgeInsets.only(right: 10),
+        margin: const EdgeInsets.only(right: 20),
         child: Card(
           color: AppTheme.lightTheme.primaryColor,
           margin: const EdgeInsets.all(0),
