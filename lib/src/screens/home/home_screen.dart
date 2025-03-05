@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _categoriesWidget() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       height: 50,
       child: ListView.builder(
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _productsWidget() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(top: 15, bottom: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: GridView.builder(
         itemCount: 10,
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisCount: 2,
           mainAxisSpacing: 20,
           crossAxisSpacing: 15,
-          mainAxisExtent: 322,
+          mainAxisExtent: 314,
         ),
         itemBuilder: (context, index) {
           return ProductCardWidget();
