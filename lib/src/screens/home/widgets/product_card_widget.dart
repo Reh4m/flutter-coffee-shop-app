@@ -9,21 +9,25 @@ class ProductCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Card(
-        elevation: 5,
+        color: Colors.white,
+        elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         child: Column(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                'assets/coffee.jpg',
-                fit: BoxFit.cover,
-                height: 150,
-                width: double.infinity,
+            Padding(
+              padding: const EdgeInsets.only(top: 12, right: 12, left: 12),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  'assets/coffee.jpg',
+                  fit: BoxFit.fill,
+                  height: 180,
+                  width: double.infinity,
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -31,7 +35,7 @@ class ProductCardWidget extends StatelessWidget {
                     'Cappuccino',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 8),
                   Text(
                     'Deep Foam',
                     style: TextStyle(
@@ -40,7 +44,7 @@ class ProductCardWidget extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -59,7 +63,7 @@ class ProductCardWidget extends StatelessWidget {
                         color: LightTheme.primaryColor,
                         textColor: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(6.0),
