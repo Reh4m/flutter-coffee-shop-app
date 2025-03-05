@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            _categoriesWidget(),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10),
               child: GridView.builder(
@@ -35,6 +36,29 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _categoriesWidget() {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      width: double.infinity,
+      height: 80,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.only(right: 20),
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20),
+            ),
+          );
+        },
       ),
     );
   }
