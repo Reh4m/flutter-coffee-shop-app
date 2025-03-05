@@ -12,6 +12,7 @@ class CategoryCardWidget extends StatelessWidget {
         margin: const EdgeInsets.only(right: 10),
         child: Card(
           color: AppTheme.lightTheme.primaryColor,
+          margin: const EdgeInsets.all(0),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),

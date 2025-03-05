@@ -10,6 +10,7 @@ class ProductCardWidget extends StatelessWidget {
       onTap: () {},
       child: Card(
         color: Colors.white,
+        margin: EdgeInsets.zero,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         child: Column(
