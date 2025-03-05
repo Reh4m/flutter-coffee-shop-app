@@ -4,9 +4,14 @@ import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +32,7 @@ class HomeScreen extends StatelessWidget {
   Widget _categoriesWidget() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 50,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -42,6 +47,7 @@ class HomeScreen extends StatelessWidget {
   Widget _productsWidget() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
+      width: MediaQuery.of(context).size.width,
       child: GridView.builder(
         itemCount: 10,
         shrinkWrap: true,
