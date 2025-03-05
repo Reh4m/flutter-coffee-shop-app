@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/home/widgets/banner_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
@@ -23,15 +24,23 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[_categoriesWidget(), _productsWidget()],
+          children: <Widget>[
+            _bannerWidget(),
+            _categoriesWidget(),
+            _productsWidget(),
+          ],
         ),
       ),
     );
   }
 
+  Widget _bannerWidget() {
+    return BannerWidget();
+  }
+
   Widget _categoriesWidget() {
     return Container(
-      margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       height: 40,
       child: ListView.builder(
@@ -46,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _productsWidget() {
     return Container(
-      margin: const EdgeInsets.only(top: 15, bottom: 20, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: GridView.builder(
         itemCount: 10,
