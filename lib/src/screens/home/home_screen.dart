@@ -1,4 +1,6 @@
+import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
+import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +9,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: LightTheme.backgroundColor,
       height: MediaQuery.of(context).size.height,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -15,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [_categoriesWidget(), _productsWidget()],
+          children: <Widget>[_categoriesWidget(), _productsWidget()],
         ),
       ),
     );
@@ -23,22 +26,14 @@ class HomeScreen extends StatelessWidget {
 
   Widget _categoriesWidget() {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       width: double.infinity,
-      height: 80,
+      height: 50,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return Container(
-            margin: const EdgeInsets.only(right: 20),
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(20),
-            ),
-          );
+          return CategoryCardWidget();
         },
       ),
     );
@@ -46,7 +41,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _productsWidget() {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: GridView.builder(
         itemCount: 10,
         shrinkWrap: true,
