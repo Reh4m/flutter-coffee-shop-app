@@ -45,7 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _bannerWidget() {
-    return BannerWidget();
+    return Container(
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      width: MediaQuery.of(context).size.width,
+      height: 220,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: const DecorationImage(
+          image: AssetImage('assets/banner.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: BannerWidget(),
+    );
   }
 
   Widget _categoriesWidget() {
