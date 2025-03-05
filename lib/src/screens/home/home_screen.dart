@@ -1,6 +1,7 @@
 import 'package:coffe_shop_app/src/screens/home/widgets/banner_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
+import 'package:coffe_shop_app/src/screens/home/widgets/search_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +26,21 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            _searchWidget(),
             _bannerWidget(),
             _categoriesWidget(),
             _productsWidget(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _searchWidget() {
+    return Container(
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      width: MediaQuery.of(context).size.width,
+      child: SearchWidget(),
     );
   }
 
