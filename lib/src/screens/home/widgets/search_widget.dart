@@ -17,6 +17,13 @@ class SearchWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: LightTheme.darkGrey,
                 borderRadius: BorderRadius.all(Radius.circular(15)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black87,
+                    blurRadius: 100,
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
               child: TextField(
                 style: TextStyle(
