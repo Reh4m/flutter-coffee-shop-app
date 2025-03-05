@@ -1,5 +1,6 @@
 import 'package:coffe_shop_app/src/screens/home/widgets/banner_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
+import 'package:coffe_shop_app/src/screens/home/widgets/location_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/search_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
@@ -16,23 +17,57 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final double locationHeight = 91;
+    final double searchHeight = 84;
+    final double bannerHeight = 240;
+    final double spacingBetweenElements = 20;
+    final double gradientHeight =
+        locationHeight +
+        searchHeight +
+        spacingBetweenElements +
+        (bannerHeight / 2);
+
     return Container(
       color: LightTheme.backgroundColor,
       height: MediaQuery.of(context).size.height,
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        dragStartBehavior: DragStartBehavior.down,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            _searchWidget(),
-            _bannerWidget(),
-            _categoriesWidget(),
-            _productsWidget(),
-          ],
-        ),
+      child: Stack(
+        children: <Widget>[
+          Container(
+            height: gradientHeight,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff232526), Color(0xff414345)],
+                stops: [0, 1],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+              ),
+            ),
+          ),
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            dragStartBehavior: DragStartBehavior.down,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                _locationWidget(),
+                _searchWidget(),
+                _bannerWidget(),
+                _categoriesWidget(),
+                _productsWidget(),
+              ],
+            ),
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget _locationWidget() {
+    return Container(
+      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+      width: MediaQuery.of(context).size.width,
+      child: LocationCardWidget(),
     );
   }
 

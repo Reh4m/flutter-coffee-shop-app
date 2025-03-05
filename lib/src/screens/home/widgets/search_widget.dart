@@ -7,6 +7,7 @@ class SearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: Row(
         children: <Widget>[
           Expanded(
