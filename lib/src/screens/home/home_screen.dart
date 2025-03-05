@@ -15,26 +15,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _categoriesWidget(),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
-              child: GridView.builder(
-                itemCount: 10,
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 15,
-                  mainAxisExtent: 322,
-                ),
-                itemBuilder: (context, index) {
-                  return ProductCardWidget();
-                },
-              ),
-            ),
-          ],
+          children: [_categoriesWidget(), _productsWidget()],
         ),
       ),
     );
@@ -58,6 +39,26 @@ class HomeScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           );
+        },
+      ),
+    );
+  }
+
+  Widget _productsWidget() {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: GridView.builder(
+        itemCount: 10,
+        shrinkWrap: true,
+        padding: EdgeInsets.zero,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 15,
+          mainAxisExtent: 322,
+        ),
+        itemBuilder: (context, index) {
+          return ProductCardWidget();
         },
       ),
     );
