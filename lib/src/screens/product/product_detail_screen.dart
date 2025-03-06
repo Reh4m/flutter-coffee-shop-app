@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -44,49 +45,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 0,
-            padding: EdgeInsets.zero,
-            elevation: 0,
-            shape: CircleBorder(),
-            textColor: Colors.black,
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Icon(Icons.arrow_back_ios),
-            ),
-          ),
-          Card(
-            color: Colors.transparent,
-            margin: EdgeInsets.zero,
-            elevation: 0,
-            child: Text(
-              'Detail',
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 0,
-            padding: EdgeInsets.zero,
-            elevation: 0,
-            shape: CircleBorder(),
-            textColor: Colors.black,
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Icon(Icons.favorite_border),
-            ),
-          ),
-        ],
-      ),
+      child: TopBarWidget(),
     );
   }
 
