@@ -3,7 +3,6 @@ import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dar
 import 'package:coffe_shop_app/src/screens/home/widgets/location_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/search_widget.dart';
-import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -27,38 +26,28 @@ class _HomeScreenState extends State<HomeScreen> {
         spacingBetweenElements +
         (bannerHeight / 2);
 
-    return Container(
-      color: LightTheme.backgroundColor,
-      height: MediaQuery.of(context).size.height,
-      child: Stack(
-        children: <Widget>[
-          Container(
-            height: gradientHeight,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xff232526), Color(0xff414345)],
-                stops: [0, 1],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              dragStartBehavior: DragStartBehavior.down,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  _buildLocation(),
+                  _buildSearch(),
+                  _buildBanner(),
+                  _buildCategories(),
+                  _buildProducts(),
+                ],
               ),
             ),
-          ),
-          SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            dragStartBehavior: DragStartBehavior.down,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                _buildLocation(),
-                _buildSearch(),
-                _buildBanner(),
-                _buildCategories(),
-                _buildProducts(),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
