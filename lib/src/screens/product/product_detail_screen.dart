@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
@@ -69,101 +70,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Title
-            Card(
-              color: Colors.transparent,
-              margin: EdgeInsets.zero,
-              elevation: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Caffe Mocha',
-                    style: const TextStyle(
-                      color: LightTheme.textColor,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Ice/Hot',
-                    style: const TextStyle(
-                      color: LightTheme.textLightColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              spacing: 15,
-              children: [
-                Card(
-                  color: Color.fromRGBO(237, 237, 237, 0.35),
-                  margin: EdgeInsets.zero,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Center(
-                      child: Icon(
-                        Icons.delivery_dining,
-                        color: LightTheme.primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  color: Color.fromRGBO(237, 237, 237, 0.35),
-                  margin: EdgeInsets.zero,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Center(
-                      child: Icon(
-                        Icons.coffee_maker_outlined,
-                        color: LightTheme.primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  color: Color.fromRGBO(237, 237, 237, 0.35),
-                  margin: EdgeInsets.zero,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Center(
-                      child: Icon(
-                        Icons.water_drop_rounded,
-                        color: LightTheme.primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      child: ProductTitleWidget(),
     );
   }
 
