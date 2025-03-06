@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/product/widgets/bottom_bar_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_description_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_size_options_widget.dart';
@@ -115,74 +116,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   Widget _bottomBarWidget() {
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-              color: Colors.transparent,
-              margin: EdgeInsets.zero,
-              elevation: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Price',
-                    style: const TextStyle(
-                      color: LightTheme.textLightColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    '\$ 4.50',
-                    style: const TextStyle(
-                      color: LightTheme.primaryColor,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {},
-              minWidth: 0,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 100,
-                vertical: 30,
-              ),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              color: LightTheme.primaryColor,
-              child: Text(
-                'Buy Now',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return Positioned(bottom: 0, left: 0, right: 0, child: BottomBarWidget());
   }
 }
