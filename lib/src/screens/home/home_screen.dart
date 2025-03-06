@@ -50,11 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _locationWidget(),
-                _searchWidget(),
-                _bannerWidget(),
-                _categoriesWidget(),
-                _productsWidget(),
+                _buildLocation(),
+                _buildSearch(),
+                _buildBanner(),
+                _buildCategories(),
+                _buildProducts(),
               ],
             ),
           ),
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _locationWidget() {
+  Widget _buildLocation() {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _searchWidget() {
+  Widget _buildSearch() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _bannerWidget() {
+  Widget _buildBanner() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _categoriesWidget() {
+  Widget _buildCategories() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _productsWidget() {
+  Widget _buildProducts() {
     return Container(
       margin: const EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
