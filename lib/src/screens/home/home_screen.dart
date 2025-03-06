@@ -17,16 +17,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final double locationHeight = 91;
-    final double searchHeight = 84;
-    final double bannerHeight = 240;
-    final double spacingBetweenElements = 20;
-    final double gradientHeight =
-        locationHeight +
-        searchHeight +
-        spacingBetweenElements +
-        (bannerHeight / 2);
-
     const double bottomNavbarHeight = 118;
 
     return Scaffold(
@@ -37,17 +27,27 @@ class _HomeScreenState extends State<HomeScreen> {
             SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               dragStartBehavior: DragStartBehavior.down,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _buildLocation(),
-                  _buildSearch(),
-                  _buildBanner(),
-                  _buildCategories(),
-                  _buildProducts(),
-                  // Extra space to avoid the last element to be hidden by the bottom navbar
-                  SizedBox(height: bottomNavbarHeight),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: _buildGradientContainer(),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      _buildLocation(),
+                      _buildSearch(),
+                      _buildBanner(),
+                      _buildCategories(),
+                      _buildProducts(),
+                      // Extra space to avoid the last element to be hidden by the bottom navbar
+                      SizedBox(height: bottomNavbarHeight),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -58,6 +58,31 @@ class _HomeScreenState extends State<HomeScreen> {
               child: BottomNavbarWidget(),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildGradientContainer() {
+    const double locationHeight = 91;
+    const double searchHeight = 84;
+    const double bannerHeight = 240;
+    const double spacingBetweenElements = 20;
+    const double gradientHeight =
+        locationHeight +
+        searchHeight +
+        spacingBetweenElements +
+        (bannerHeight / 2);
+
+    return Container(
+      // Covers up to half of banner height
+      height: gradientHeight,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xff232526), Color(0xff414345)],
+          stops: [0, 1],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
         ),
       ),
     );
