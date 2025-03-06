@@ -18,30 +18,37 @@ class ProductDetailScreen extends StatefulWidget {
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: LightTheme.backgroundColor,
-      height: MediaQuery.of(context).size.height,
-      child: Stack(
-        children: [
-          SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            dragStartBehavior: DragStartBehavior.down,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                _buildTopBar(),
-                _buildProductImage(),
-                _buildProductTitle(),
-                _buildProductRating(),
-                _spacerLineWidget(),
-                _buildProductDescription(),
-                _buildProductSizeOptions(),
-              ],
+    double bottomBarHeight = 110;
+
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              dragStartBehavior: DragStartBehavior.down,
+              // ignore: sized_box_for_whitespace
+              child: Container(
+                height: MediaQuery.of(context).size.height + bottomBarHeight,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    _buildTopBar(),
+                    _buildProductImage(),
+                    _buildProductTitle(),
+                    _buildProductRating(),
+                    _spacerLineWidget(),
+                    _buildProductDescription(),
+                    _buildProductSizeOptions(),
+                  ],
+                ),
+              ),
             ),
-          ),
-          _buildBottomBar(),
-        ],
+            _buildBottomBar(),
+          ],
+        ),
       ),
     );
   }
