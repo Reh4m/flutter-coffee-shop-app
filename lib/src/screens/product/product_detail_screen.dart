@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
@@ -78,36 +79,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 10, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(Icons.star_rounded, color: Color(0xFFFBBE21), size: 30),
-            const SizedBox(width: 5),
-            Text(
-              '4.5',
-              style: const TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(width: 5),
-            Text(
-              ' (125 Reviews)',
-              style: const TextStyle(
-                color: LightTheme.textLightColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-      ),
+      child: ProductRatingWidget(),
     );
   }
 
