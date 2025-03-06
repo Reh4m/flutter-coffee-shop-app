@@ -1,5 +1,6 @@
 import 'package:coffe_shop_app/src/screens/product/widgets/product_description_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
+import 'package:coffe_shop_app/src/screens/product/widgets/product_size_options_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
@@ -109,65 +110,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Size',
-              style: const TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              spacing: 15,
-              children: [
-                _sizeOptionWidget('S', 'Small', false),
-                _sizeOptionWidget('M', 'Medium', true),
-                _sizeOptionWidget('L', 'Large', false),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _sizeOptionWidget(String size, String title, bool isSelected) {
-    return Expanded(
-      child: Card(
-        color: isSelected ? Color.fromRGBO(198, 124, 78, 0.1) : Colors.white,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: BorderSide(
-            color: isSelected ? LightTheme.primaryColor : LightTheme.lightGrey,
-            width: 2,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Center(
-            child: Text(
-              size,
-              style: TextStyle(
-                color:
-                    isSelected ? LightTheme.primaryColor : LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w200,
-              ),
-            ),
-          ),
-        ),
-      ),
+      child: ProductSizeOptionsWidget(),
     );
   }
 
