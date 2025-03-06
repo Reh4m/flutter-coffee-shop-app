@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/product/widgets/product_description_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
@@ -100,34 +101,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Description',
-              style: const TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Caffe Mocha is a chocolate-flavored variant of a caffè latte. Other commonly used spellings are mochaccino and also mochachino. It is usually served with whipped cream, and topped with a dusting of either cocoa, cinnamon, or both.',
-              style: const TextStyle(
-                color: LightTheme.textLightColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                height: 1.5,
-              ),
-            ),
-          ],
-        ),
-      ),
+      child: ProductDescriptionWidget(),
     );
   }
 
