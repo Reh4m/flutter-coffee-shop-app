@@ -30,23 +30,23 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _topBarWidget(),
-                _productImageWidget(),
-                _productTitleWidget(),
-                _productRatingWidget(),
+                _buildTopBar(),
+                _buildProductImage(),
+                _buildProductTitle(),
+                _buildProductRating(),
                 _spacerLineWidget(),
-                _productDescriptionWidget(),
-                _productSizeOptions(),
+                _buildProductDescription(),
+                _buildProductSizeOptions(),
               ],
             ),
           ),
-          _bottomBarWidget(),
+          _buildBottomBar(),
         ],
       ),
     );
   }
 
-  Widget _topBarWidget() {
+  Widget _buildTopBar() {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -54,7 +54,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _productImageWidget() {
+  Widget _buildProductImage() {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -70,7 +70,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _productTitleWidget() {
+  Widget _buildProductTitle() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -78,7 +78,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _productRatingWidget() {
+  Widget _buildProductRating() {
     return Container(
       margin: const EdgeInsets.only(top: 10, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -99,7 +99,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _productDescriptionWidget() {
+  Widget _buildProductDescription() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -107,7 +107,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _productSizeOptions() {
+  Widget _buildProductSizeOptions() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
@@ -115,7 +115,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _bottomBarWidget() {
+  Widget _buildBottomBar() {
     return Positioned(bottom: 0, left: 0, right: 0, child: BottomBarWidget());
   }
 }
