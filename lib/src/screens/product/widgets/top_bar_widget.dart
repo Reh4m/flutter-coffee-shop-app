@@ -9,7 +9,7 @@ class TopBarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _icon(iconName: Icon(Icons.arrow_back_ios_new)),
+        _icon(icon: Icons.arrow_back_ios_new),
         Card(
           color: Colors.transparent,
           margin: EdgeInsets.zero,
@@ -23,15 +23,15 @@ class TopBarWidget extends StatelessWidget {
             ),
           ),
         ),
-        _icon(iconName: Icon(Icons.favorite_border)),
+        _icon(icon: Icons.favorite_border),
       ],
     );
   }
 
-  Widget _icon({required Icon iconName}) {
+  Widget _icon({required IconData icon}) {
     return IconButton(
       onPressed: () {},
-      icon: iconName,
+      icon: Icon(icon),
       padding: EdgeInsets.all(10.0),
       color: Color(0xFF242424),
     );
