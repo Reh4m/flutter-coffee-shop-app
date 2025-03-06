@@ -3,6 +3,7 @@ import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dar
 import 'package:coffe_shop_app/src/screens/home/widgets/location_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/product_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/search_widget.dart';
+import 'package:coffe_shop_app/src/widgets/bottom_navbar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
         spacingBetweenElements +
         (bannerHeight / 2);
 
+    const double bottomNavbarHeight = 118;
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -43,8 +46,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   _buildBanner(),
                   _buildCategories(),
                   _buildProducts(),
+                  // Extra space to avoid the last element to be hidden by the bottom navbar
+                  SizedBox(height: bottomNavbarHeight),
                 ],
               ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: BottomNavbarWidget(),
             ),
           ],
         ),
