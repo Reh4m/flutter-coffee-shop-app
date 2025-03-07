@@ -16,9 +16,8 @@ class BottomNavbarWidget extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
-        spacing: 55,
         children: [
           _icon(Icons.home_rounded, true),
           _icon(Icons.favorite_outline_rounded, false),
