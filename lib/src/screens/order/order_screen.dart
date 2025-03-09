@@ -1,6 +1,7 @@
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_address_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_method_switch_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/spacer_line_widget.dart';
 import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,9 @@ class _OrderScreenState extends State<OrderScreen> {
                     _buildTopBar(),
                     _buildDeliveryMethodSwitch(),
                     _buildDeliveryAddress(),
-                    _spacerLineWidget(),
+                    SpacerLineWidget(),
                     _productOrderDetails(),
-                    _spacerLineWidget(),
+                    SpacerLineWidget(),
                     _buildPromotions(),
                     _buildPaymentSummary(),
                   ],
@@ -75,19 +76,6 @@ class _OrderScreenState extends State<OrderScreen> {
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
       child: DeliveryAddressWidget(),
-    );
-  }
-
-  Widget _spacerLineWidget() {
-    return Container(
-      margin: const EdgeInsets.only(top: 20, left: 60, right: 60),
-      width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: LightTheme.lightGrey,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Container(height: 1, color: LightTheme.lightGrey),
-      ),
     );
   }
 

@@ -3,7 +3,7 @@ import 'package:coffe_shop_app/src/screens/product/widgets/product_description_w
 import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_size_options_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
-import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/spacer_line_widget.dart';
 import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     _buildProductImage(),
                     _buildProductTitle(),
                     _buildProductRating(),
-                    _spacerLineWidget(),
+                    SpacerLineWidget(),
                     _buildProductDescription(),
                     _buildProductSizeOptions(),
                   ],
@@ -93,19 +93,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       margin: const EdgeInsets.only(top: 10, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
       child: ProductRatingWidget(),
-    );
-  }
-
-  Widget _spacerLineWidget() {
-    return Container(
-      margin: const EdgeInsets.only(top: 20, left: 60, right: 60),
-      width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: LightTheme.lightGrey,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Container(height: 1, color: LightTheme.lightGrey),
-      ),
     );
   }
 
