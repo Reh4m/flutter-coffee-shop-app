@@ -1,5 +1,6 @@
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_address_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_method_switch_widget.dart';
+import 'package:coffe_shop_app/src/screens/order/widgets/payment_summary_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/product_order_card_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:coffe_shop_app/src/widgets/spacer_line_widget.dart';
@@ -139,78 +140,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Payment Summary',
-              style: TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 15),
-            Row(
-              children: [
-                const Text(
-                  'Subtotal',
-                  style: TextStyle(
-                    color: LightTheme.textColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const Spacer(),
-                const Text(
-                  '\$ 5.00',
-                  style: TextStyle(
-                    color: Color(0xFF242424),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                const Text(
-                  'Delivery Fee',
-                  style: TextStyle(
-                    color: LightTheme.textColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const Spacer(),
-                const Text(
-                  '\$ 2.00',
-                  style: TextStyle(
-                    color: Color(0xFF2A2A2A),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    decoration: TextDecoration.lineThrough,
-                  ),
-                ),
-                SizedBox(width: 10),
-                const Text(
-                  '\$ 1.00',
-                  style: TextStyle(
-                    color: Color(0xFF242424),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      child: PaymentSummaryWidget(),
     );
   }
 
