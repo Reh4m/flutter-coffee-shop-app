@@ -1,5 +1,6 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -51,37 +52,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.arrow_back_ios_new),
-            padding: EdgeInsets.all(10.0),
-            color: Color(0xFF242424),
-          ),
-          Card(
-            color: Colors.transparent,
-            margin: EdgeInsets.zero,
-            elevation: 0,
-            child: Text(
-              'Order',
-              style: const TextStyle(
-                color: Color(0xFF242424),
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.arrow_back_ios_new),
-            padding: EdgeInsets.all(10.0),
-            color: Colors.transparent,
-          ),
-        ],
-      ),
+      child: TopBarWidget(title: 'Order'),
     );
   }
 

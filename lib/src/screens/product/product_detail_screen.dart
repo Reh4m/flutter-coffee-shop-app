@@ -3,8 +3,8 @@ import 'package:coffe_shop_app/src/screens/product/widgets/product_description_w
 import 'package:coffe_shop_app/src/screens/product/widgets/product_rating_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_size_options_widget.dart';
 import 'package:coffe_shop_app/src/screens/product/widgets/product_title_widget.dart';
-import 'package:coffe_shop_app/src/screens/product/widgets/top_bar_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +57,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: TopBarWidget(),
+      child: TopBarWidget(
+        title: 'Detail',
+        rightIcon: Icons.favorite_border_rounded,
+      ),
     );
   }
 
