@@ -1,4 +1,4 @@
-import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:coffe_shop_app/src/screens/order/widgets/delivery_method_switch_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
 import 'package:flutter/gestures.dart';
@@ -30,7 +30,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     _buildTopBar(),
-                    _buildDeliverOrPickUpSwitch(),
+                    _buildDeliveryMethodSwitch(),
                     _buildDeliveryAddress(),
                     _spacerLineWidget(),
                     _productOrderDetails(),
@@ -56,9 +56,7 @@ class _OrderScreenState extends State<OrderScreen> {
     );
   }
 
-  bool value = true;
-
-  Widget _buildDeliverOrPickUpSwitch() {
+  Widget _buildDeliveryMethodSwitch() {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
       padding: EdgeInsets.all(5),
@@ -67,36 +65,7 @@ class _OrderScreenState extends State<OrderScreen> {
         color: Color(0xFFEDEDED),
         borderRadius: BorderRadius.circular(15),
       ),
-      child: AnimatedToggleSwitch<bool>.size(
-        height: 45,
-        current: value,
-        values: const [true, false],
-        iconOpacity: 1.0,
-        indicatorSize: Size.infinite,
-        customIconBuilder:
-            (context, local, global) => Text(
-              local.value ? 'Deliver' : 'Pick Up',
-              style: TextStyle(
-                color: Color.lerp(
-                  Color(0xFF242424),
-                  Colors.white,
-                  local.animationValue,
-                ),
-                // color: local.value ? Colors.white : Color(0xFF242424),
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-        borderWidth: 0,
-        iconAnimationType: AnimationType.onHover,
-        style: ToggleStyle(
-          backgroundColor: Colors.transparent,
-          indicatorColor: LightTheme.primaryColor,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        selectedIconScale: 1,
-        onChanged: (i) => setState(() => value = i),
-      ),
+      child: DeliveryMethodSwitchWidget(),
     );
   }
 
