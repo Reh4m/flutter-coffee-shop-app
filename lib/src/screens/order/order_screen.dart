@@ -2,6 +2,7 @@ import 'package:coffe_shop_app/src/screens/order/widgets/delivery_address_widget
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_method_switch_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/payment_summary_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/product_order_card_widget.dart';
+import 'package:coffe_shop_app/src/screens/order/widgets/promotions_card_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:coffe_shop_app/src/widgets/spacer_line_widget.dart';
 import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
@@ -93,46 +94,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(15),
-        child: Card(
-          color: Colors.white,
-          margin: EdgeInsets.zero,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-            side: BorderSide(color: Color(0xFFEDEDED), width: 1.5),
-          ),
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.percent_rounded,
-                  color: LightTheme.primaryColor,
-                  size: 25,
-                ),
-                SizedBox(width: 15),
-                Text(
-                  '1 Discount is Applies',
-                  style: TextStyle(
-                    color: LightTheme.textColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Color(0xFF2A2A2A),
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      child: PromotionsCardWidget(),
     );
   }
 
