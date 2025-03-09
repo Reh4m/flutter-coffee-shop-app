@@ -47,7 +47,7 @@ class BottomBarWidget extends StatelessWidget {
             ),
           ),
           MaterialButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(context, '/order-details'),
             minWidth: 0,
             padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
             elevation: 0,

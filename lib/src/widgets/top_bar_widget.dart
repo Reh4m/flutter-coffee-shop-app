@@ -12,16 +12,16 @@ class TopBarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _buildIconButton(Icons.arrow_back_ios),
+        _buildIconButton(Icons.arrow_back_ios, () => Navigator.pop(context)),
         _buildTitle(),
         _buildRightIcon(),
       ],
     );
   }
 
-  Widget _buildIconButton(IconData icon) {
+  Widget _buildIconButton(IconData icon, VoidCallback onPressed) {
     return IconButton(
-      onPressed: () {},
+      onPressed: onPressed,
       icon: Icon(icon),
       padding: const EdgeInsets.all(10.0),
       color: const Color(0xFF242424),
@@ -46,7 +46,7 @@ class TopBarWidget extends StatelessWidget {
 
   Widget _buildRightIcon() {
     return rightIcon != null
-        ? _buildIconButton(rightIcon!)
+        ? _buildIconButton(rightIcon!, () {})
         : SizedBox(width: 44);
   }
 }
