@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/order/widgets/delivery_address_widget.dart';
 import 'package:coffe_shop_app/src/screens/order/widgets/delivery_method_switch_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:coffe_shop_app/src/widgets/top_bar_widget.dart';
@@ -73,80 +74,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
       width: MediaQuery.of(context).size.width,
-      child: Card(
-        color: Colors.transparent,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Delivery Address',
-              style: TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 15),
-            // Name
-            const Text(
-              'John Doe',
-              style: TextStyle(
-                color: LightTheme.textColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(height: 5),
-            const Text(
-              '1234, Coffee Street, New York, USA',
-              style: TextStyle(
-                color: LightTheme.textLightColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            SizedBox(height: 15),
-            Wrap(
-              spacing: 10,
-              children: [
-                Chip(
-                  avatar: Icon(
-                    Icons.edit_location_alt_outlined,
-                    color: LightTheme.darkGrey,
-                  ),
-                  label: Text('Edit Address'),
-                  labelStyle: TextStyle(
-                    color: LightTheme.darkGrey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  deleteIcon: Icon(Icons.edit, color: LightTheme.darkGrey),
-                ),
-                Chip(
-                  avatar: Icon(Icons.notes_rounded, color: LightTheme.darkGrey),
-                  label: Text('Add note'),
-                  labelStyle: TextStyle(
-                    color: LightTheme.darkGrey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  deleteIcon: Icon(Icons.edit, color: LightTheme.darkGrey),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      child: DeliveryAddressWidget(),
     );
   }
 
