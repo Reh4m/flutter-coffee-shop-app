@@ -12,7 +12,7 @@ class ProductRatingWidget extends StatelessWidget {
       elevation: 0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(Icons.star_rounded, color: Color(0xFFFBBE21), size: 30),
           const SizedBox(width: 5),
