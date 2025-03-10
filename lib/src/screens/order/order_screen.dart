@@ -19,6 +19,8 @@ class OrderScreen extends StatefulWidget {
 class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
+    const double bottomBarHeight = 198;
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -42,6 +44,8 @@ class _OrderScreenState extends State<OrderScreen> {
                     SpacerLineWidget(),
                     _buildPromotions(),
                     _buildPaymentSummary(),
+                    // Extra space to avoid the last element to be hidden by the bottom bar
+                    SizedBox(height: bottomBarHeight),
                   ],
                 ),
               ),

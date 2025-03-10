@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    const double bottomNavbarHeight = 118;
+    const double bottomBarHeight = 118;
 
     return Scaffold(
       body: SafeArea(
@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       _buildBanner(),
                       _buildCategories(),
                       _buildProducts(),
-                      // Extra space to avoid the last element to be hidden by the bottom navbar
-                      SizedBox(height: bottomNavbarHeight),
+                      // Extra space to avoid the last element to be hidden by the bottom bar
+                      SizedBox(height: bottomBarHeight),
                     ],
                   ),
                 ],
