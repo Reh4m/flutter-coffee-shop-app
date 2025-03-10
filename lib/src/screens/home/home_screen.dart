@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
       margin: const EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: GridView.builder(
-        itemCount: 10,
+        itemCount: Coffees.coffeesList.length,
         shrinkWrap: true,
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisExtent: 314,
         ),
         itemBuilder: (context, index) {
-          return ProductCardWidget();
+          return ProductCardWidget(product: Coffees.coffeesList[index]);
         },
       ),
     );

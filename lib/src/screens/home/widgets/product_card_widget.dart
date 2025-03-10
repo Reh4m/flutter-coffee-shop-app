@@ -1,8 +1,11 @@
+import 'package:coffe_shop_app/src/models/coffee_model.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  const ProductCardWidget({super.key});
+  final CoffeeDrink product;
+
+  const ProductCardWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +36,12 @@ class ProductCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Cappuccino',
+                    product.name,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Deep Foam',
+                    product.category.name,
                     style: TextStyle(
                       fontSize: 14,
                       color: LightTheme.textLightColor,
@@ -50,7 +53,7 @@ class ProductCardWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '\$ 5.99',
+                        product.prices[DrinkSize.small].toString(),
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
