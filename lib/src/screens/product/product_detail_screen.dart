@@ -55,7 +55,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildTopBar() {
     return Container(
-      margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: TopBarWidget(
         title: 'Detail',
@@ -66,7 +66,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductImage() {
     return Container(
-      margin: const EdgeInsets.only(top: 40, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
@@ -82,7 +82,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductTitle() {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ProductTitleWidget(),
     );
@@ -90,7 +90,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductRating() {
     return Container(
-      margin: const EdgeInsets.only(top: 10, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ProductRatingWidget(),
     );
@@ -98,7 +98,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductDescription() {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ProductDescriptionWidget(),
     );
@@ -106,7 +106,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductSizeOptions() {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
+      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ProductSizeOptionsWidget(),
     );
