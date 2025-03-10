@@ -19,7 +19,7 @@ class CategoryCardWidget extends StatelessWidget {
           color:
               category.id == selectedCategory
                   ? AppTheme.lightTheme.primaryColor
-                  : Color(0xFFEDEDED),
+                  : Color.fromRGBO(237, 237, 237, 0.35),
           margin: const EdgeInsets.all(0),
           elevation: 0,
           shape: RoundedRectangleBorder(
