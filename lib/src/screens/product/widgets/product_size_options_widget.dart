@@ -1,8 +1,16 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
-class ProductSizeOptionsWidget extends StatelessWidget {
+class ProductSizeOptionsWidget extends StatefulWidget {
   const ProductSizeOptionsWidget({super.key});
+
+  @override
+  State<ProductSizeOptionsWidget> createState() =>
+      _ProductSizeOptionsWidgetState();
+}
+
+class _ProductSizeOptionsWidgetState extends State<ProductSizeOptionsWidget> {
+  int selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +34,9 @@ class ProductSizeOptionsWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             spacing: 15,
             children: [
-              _sizeOptionWidget('S', 'Small', false),
-              _sizeOptionWidget('M', 'Medium', true),
-              _sizeOptionWidget('L', 'Large', false),
+              _sizeOptionWidget(0, 'S'),
+              _sizeOptionWidget(1, 'M'),
+              _sizeOptionWidget(2, 'L'),
             ],
           ),
         ],
@@ -36,29 +44,41 @@ class ProductSizeOptionsWidget extends StatelessWidget {
     );
   }
 
-  Widget _sizeOptionWidget(String size, String title, bool isSelected) {
+  Widget _sizeOptionWidget(int index, String size) {
     return Expanded(
-      child: Card(
-        color: isSelected ? Color.fromRGBO(198, 124, 78, 0.1) : Colors.white,
-        margin: EdgeInsets.zero,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: BorderSide(
-            color: isSelected ? LightTheme.primaryColor : LightTheme.lightGrey,
-            width: 2,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        child: Card(
+          color: index == selectedIndex ? Color(0xFFF9F2ED) : Colors.white,
+          margin: EdgeInsets.zero,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+            side: BorderSide(
+              color:
+                  index == selectedIndex
+                      ? LightTheme.primaryColor
+                      : LightTheme.lightGrey,
+              width: 1,
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Center(
-            child: Text(
-              size,
-              style: TextStyle(
-                color:
-                    isSelected ? LightTheme.primaryColor : LightTheme.textColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Center(
+              child: Text(
+                size,
+                style: TextStyle(
+                  color:
+                      index == selectedIndex
+                          ? LightTheme.primaryColor
+                          : LightTheme.textColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ),
