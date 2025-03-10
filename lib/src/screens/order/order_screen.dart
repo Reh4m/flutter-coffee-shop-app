@@ -59,7 +59,7 @@ class _OrderScreenState extends State<OrderScreen> {
 
   Widget _buildTopBar() {
     return Container(
-      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: TopBarWidget(title: 'Order'),
     );
@@ -67,7 +67,7 @@ class _OrderScreenState extends State<OrderScreen> {
 
   Widget _buildDeliveryMethodSwitch() {
     return Container(
-      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
       padding: EdgeInsets.all(5),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
