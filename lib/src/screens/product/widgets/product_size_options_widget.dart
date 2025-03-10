@@ -57,8 +57,8 @@ class ProductSizeOptionsWidget extends StatelessWidget {
               style: TextStyle(
                 color:
                     isSelected ? LightTheme.primaryColor : LightTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w200,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),

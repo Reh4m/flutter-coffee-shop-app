@@ -51,7 +51,7 @@ class ProductDescriptionWidget extends StatelessWidget {
       style: const TextStyle(
         color: LightTheme.textLightColor,
         fontSize: 16,
-        fontWeight: FontWeight.w200,
+        fontWeight: FontWeight.w300,
         height: 1.5,
       ),
       moreStyle: readMoreTextStyle,
