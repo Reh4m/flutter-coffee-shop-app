@@ -1,3 +1,5 @@
+import 'package:coffe_shop_app/src/data/data.dart';
+import 'package:coffe_shop_app/src/models/category_model.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/banner_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/location_card_widget.dart';
@@ -127,10 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
       width: MediaQuery.of(context).size.width,
       height: 40,
       child: ListView.builder(
+        itemCount: Categories.categoriesList.length,
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
         itemBuilder: (context, index) {
-          return CategoryCardWidget();
+          return index == 0
+              ? CategoryCardWidget(
+                category: Category(id: 0, name: 'All Coffee'),
+              )
+              : CategoryCardWidget(category: Categories.categoriesList[index]);
         },
       ),
     );

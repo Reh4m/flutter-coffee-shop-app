@@ -1,8 +1,11 @@
+import 'package:coffe_shop_app/src/models/category_model.dart';
 import 'package:coffe_shop_app/src/themes/theme.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCardWidget extends StatelessWidget {
-  const CategoryCardWidget({super.key});
+  final Category category;
+
+  const CategoryCardWidget({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class CategoryCardWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
-                'Category',
+                category.name,
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
