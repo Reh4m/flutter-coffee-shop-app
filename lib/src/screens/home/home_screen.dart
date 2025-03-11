@@ -148,13 +148,12 @@ class _HomeScreenState extends State<HomeScreen> {
       child: GridView.builder(
         itemCount: Coffees.coffeesList.length,
         shrinkWrap: true,
-        padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 20,
+          childAspectRatio: 0.59,
           crossAxisSpacing: 15,
-          mainAxisExtent: 314,
+          mainAxisSpacing: 15,
         ),
         itemBuilder: (context, index) {
           return ProductCardWidget(product: Coffees.coffeesList[index]);
