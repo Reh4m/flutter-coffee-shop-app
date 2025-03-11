@@ -57,7 +57,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildTopBar() {
     return Container(
-      margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 25, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: TopBarWidget(
         title: 'Detail',
@@ -68,7 +68,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   Widget _buildProductImage() {
     return Container(
-      margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 25, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
