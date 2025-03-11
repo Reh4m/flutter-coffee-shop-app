@@ -16,30 +16,32 @@ class ProductCardWidget extends StatelessWidget {
         margin: EdgeInsets.zero,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 12, right: 12, left: 12),
-              child: ClipRRect(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   'assets/coffee.jpg',
                   fit: BoxFit.fill,
-                  height: 180,
+                  height: 140,
                   width: double.infinity,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(height: 10),
                   Text(
                     product.name,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: LightTheme.textColor,
+                    ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 5),
                   Text(
                     product.category.name,
                     style: TextStyle(
@@ -48,38 +50,44 @@ class ProductCardWidget extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        product.prices[DrinkSize.small].toString(),
+                        '\$ ${product.prices[DrinkSize.small].toString()}',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      MaterialButton(
-                        onPressed: () {},
-                        minWidth: 0,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        color: LightTheme.primaryColor,
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(6.0),
-                          child: Icon(Icons.add),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Card(
+                          color: LightTheme.primaryColor,
+                          margin: EdgeInsets.zero,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
