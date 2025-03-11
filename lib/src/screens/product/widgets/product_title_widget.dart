@@ -30,7 +30,7 @@ class ProductTitleWidget extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 5),
                 Text(
                   'Ice/Hot',
                   style: const TextStyle(
@@ -57,7 +57,7 @@ class ProductTitleWidget extends StatelessWidget {
 
   Widget _productFeatureWidget({required IconData icon}) {
     return Card(
-      color: Color.fromRGBO(237, 237, 237, 0.35),
+      color: Color.fromRGBO(237, 237, 237, 0.5),
       margin: EdgeInsets.zero,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),

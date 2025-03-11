@@ -25,7 +25,7 @@ class BottomBarWidgetState extends State<BottomBarWidget> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Card(
             color: Colors.transparent,
@@ -52,7 +52,7 @@ class BottomBarWidgetState extends State<BottomBarWidget> {
                         '\$ ${value.toStringAsFixed(2)}',
                         style: const TextStyle(
                           color: LightTheme.primaryColor,
-                          fontSize: 22,
+                          fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -63,7 +63,7 @@ class BottomBarWidgetState extends State<BottomBarWidget> {
           MaterialButton(
             onPressed: () => Navigator.pushNamed(context, '/order-details'),
             minWidth: 0,
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
             elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),

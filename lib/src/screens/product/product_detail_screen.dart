@@ -20,7 +20,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double bottomBarHeight = 110;
+    const double bottomBarHeight = 104;
 
     return Scaffold(
       body: SafeArea(
@@ -72,12 +72,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       width: MediaQuery.of(context).size.width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
-        child: Image.asset(
-          'assets/coffee.jpg',
-          fit: BoxFit.cover,
-          height: 300,
-          width: double.infinity,
-        ),
+        child: Image.asset('assets/coffee.jpg', fit: BoxFit.cover, height: 250),
       ),
     );
   }
