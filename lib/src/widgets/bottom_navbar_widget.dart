@@ -7,7 +7,7 @@ class BottomNavbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -37,7 +37,7 @@ class BottomNavbarWidget extends StatelessWidget {
           icon: Icon(icon),
           color:
               isSelected ? LightTheme.primaryColor : LightTheme.textLightColor,
-          iconSize: 35,
+          iconSize: 30,
         ),
         Container(
           height: 6,
