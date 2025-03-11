@@ -16,6 +16,8 @@ class ProductDetailScreen extends StatefulWidget {
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
+  final GlobalKey<BottomBarWidgetState> bottomBarKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     double bottomBarHeight = 110;
@@ -104,15 +106,24 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
+  void _updatePrice(double price) {
+    bottomBarKey.currentState?.updatePrice(price);
+  }
+
   Widget _buildProductSizeOptions() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
-      child: ProductSizeOptionsWidget(),
+      child: ProductSizeOptionsWidget(updatePrice: _updatePrice),
     );
   }
 
   Widget _buildBottomBar() {
-    return Positioned(bottom: 0, left: 0, right: 0, child: BottomBarWidget());
+    return Positioned(
+      bottom: 0,
+      left: 0,
+      right: 0,
+      child: BottomBarWidget(key: bottomBarKey),
+    );
   }
 }
