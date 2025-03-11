@@ -17,52 +17,49 @@ class BottomBarWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.account_balance_wallet_outlined,
-                  color: LightTheme.primaryColor,
-                  size: 25,
-                ),
-                SizedBox(width: 30),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Cash/Wallet',
-                      style: TextStyle(
-                        color: Color(0xFF242424),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
+          Row(
+            children: [
+              Icon(
+                Icons.account_balance_wallet_outlined,
+                color: LightTheme.primaryColor,
+                size: 25,
+              ),
+              SizedBox(width: 20),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Cash/Wallet',
+                    style: TextStyle(
+                      color: Color(0xFF242424),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
                     ),
-                    SizedBox(height: 5),
-                    Text(
-                      '\$ 5.00',
-                      style: TextStyle(
-                        color: LightTheme.primaryColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    '\$ 5.00',
+                    style: TextStyle(
+                      color: LightTheme.primaryColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
                     ),
-                  ],
-                ),
-                const Spacer(),
-                Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: Color(0xFF2A2A2A),
-                  size: 20,
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Icon(
+                Icons.keyboard_arrow_down_rounded,
+                color: Color(0xFF2A2A2A),
+                size: 20,
+              ),
+            ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           MaterialButton(
             onPressed: () {},
             minWidth: Size.infinite.width,
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+            padding: const EdgeInsets.symmetric(vertical: 20),
             elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),

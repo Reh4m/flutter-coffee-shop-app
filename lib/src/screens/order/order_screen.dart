@@ -19,7 +19,7 @@ class OrderScreen extends StatefulWidget {
 class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
-    const double bottomBarHeight = 198;
+    const double bottomBarHeight = 163;
 
     return Scaffold(
       body: SafeArea(
