@@ -15,16 +15,16 @@ class BannerWidget extends StatelessWidget {
           margin: EdgeInsets.zero,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(6),
             child: const Text(
               'Promo',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -38,8 +38,8 @@ class BannerWidget extends StatelessWidget {
             'Buy one get one FREE',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 42,
-              fontWeight: FontWeight.bold,
+              fontSize: 34,
+              fontWeight: FontWeight.w600,
               backgroundColor: Color(0xFF222222),
             ),
           ),

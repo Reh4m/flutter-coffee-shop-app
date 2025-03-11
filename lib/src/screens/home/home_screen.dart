@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildGradientContainer() {
     const double locationHeight = 91;
     const double searchHeight = 84;
-    const double bannerHeight = 240;
+    const double bannerHeight = 173;
     const double spacingBetweenElements = 20;
     const double gradientHeight =
         locationHeight +
@@ -109,9 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildBanner() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       width: MediaQuery.of(context).size.width,
-      height: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         image: const DecorationImage(
