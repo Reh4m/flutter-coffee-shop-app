@@ -1,8 +1,16 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
-class BottomBarWidget extends StatelessWidget {
+class BottomBarWidget extends StatefulWidget {
   const BottomBarWidget({super.key});
+
+  @override
+  State<BottomBarWidget> createState() => BottomBarWidgetState();
+}
+
+class BottomBarWidgetState extends State<BottomBarWidget> {
+  double _beginAmount = 4.99;
+  double _targetAmount = 4.99;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +43,19 @@ class BottomBarWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                Text(
-                  '\$ 4.50',
-                  style: const TextStyle(
-                    color: LightTheme.primaryColor,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                  ),
+                TweenAnimationBuilder(
+                  tween: Tween<double>(begin: _beginAmount, end: _targetAmount),
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeOut,
+                  builder:
+                      (context, value, child) => Text(
+                        '\$ ${value.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                          color: LightTheme.primaryColor,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                 ),
               ],
             ),
@@ -67,5 +81,12 @@ class BottomBarWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void updatePrice(double newPrice) {
+    setState(() {
+      _beginAmount = _targetAmount;
+      _targetAmount = newPrice;
+    });
   }
 }
