@@ -3,6 +3,7 @@ import 'package:coffe_shop_app/src/models/coffee_model.dart';
 
 class Categories {
   static List<Category> categoriesList = [
+    Category(id: 0, name: 'All Coffee'),
     Category(id: 1, name: 'Macchiato'),
     Category(id: 2, name: 'Latte'),
     Category(id: 3, name: 'Americano'),

@@ -5,19 +5,25 @@ import 'package:flutter/material.dart';
 
 class CategoryCardWidget extends StatelessWidget {
   final Category category;
-  final int selectedCategory = 0;
+  final Function(int) onCategorySelected;
+  final bool isSelected;
 
-  const CategoryCardWidget({super.key, required this.category});
+  const CategoryCardWidget({
+    super.key,
+    required this.category,
+    required this.onCategorySelected,
+    required this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => onCategorySelected(category.id),
       child: Container(
         margin: const EdgeInsets.only(right: 20),
         child: Card(
           color:
-              category.id == selectedCategory
+              isSelected
                   ? AppTheme.lightTheme.primaryColor
                   : Color.fromRGBO(237, 237, 237, 0.35),
           margin: const EdgeInsets.all(0),
@@ -31,14 +37,8 @@ class CategoryCardWidget extends StatelessWidget {
               child: Text(
                 category.name,
                 style: TextStyle(
-                  color:
-                      category.id == selectedCategory
-                          ? Colors.white
-                          : LightTheme.textColor,
-                  fontWeight:
-                      category.id == selectedCategory
-                          ? FontWeight.w600
-                          : FontWeight.w400,
+                  color: isSelected ? Colors.white : LightTheme.textColor,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                   fontSize: 16,
                 ),
               ),

@@ -1,5 +1,4 @@
 import 'package:coffe_shop_app/src/data/data.dart';
-import 'package:coffe_shop_app/src/models/category_model.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/banner_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/category_card_widget.dart';
 import 'package:coffe_shop_app/src/screens/home/widgets/location_card_widget.dart';
@@ -14,10 +13,18 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
+  int selectedCategoryIndex = 0;
+
+  void _onCategorySelected(int categoryId) {
+    setState(() {
+      selectedCategoryIndex = categoryId;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const double bottomBarHeight = 118;
@@ -132,11 +139,12 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: Categories.categoriesList.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return index == 0
-              ? CategoryCardWidget(
-                category: Category(id: 0, name: 'All Coffee'),
-              )
-              : CategoryCardWidget(category: Categories.categoriesList[index]);
+          return CategoryCardWidget(
+            category: Categories.categoriesList[index],
+            onCategorySelected: _onCategorySelected,
+            isSelected:
+                selectedCategoryIndex == Categories.categoriesList[index].id,
+          );
         },
       ),
     );
