@@ -1,8 +1,25 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
-class ProductOrderCardWidget extends StatelessWidget {
+class ProductOrderCardWidget extends StatefulWidget {
   const ProductOrderCardWidget({super.key});
+
+  @override
+  State<ProductOrderCardWidget> createState() => _ProductOrderCardWidgetState();
+}
+
+class _ProductOrderCardWidgetState extends State<ProductOrderCardWidget> {
+  int quantity = 1;
+
+  void _incrementQuantity() {
+    setState(() => quantity += 1);
+  }
+
+  void _decrementQuantity() {
+    if (quantity > 1) {
+      setState(() => quantity -= 1);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,16 +85,19 @@ class ProductOrderCardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _buildQuantityButton(icon: Icons.remove, onPressed: null),
-          const Text(
-            '1',
+          _buildQuantityButton(
+            icon: Icons.remove,
+            onPressed: quantity == 1 ? null : _decrementQuantity,
+          ),
+          Text(
+            quantity.toString(),
             style: TextStyle(
               color: Color(0xFF2A2A2A),
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
           ),
-          _buildQuantityButton(icon: Icons.add, onPressed: () {}),
+          _buildQuantityButton(icon: Icons.add, onPressed: _incrementQuantity),
         ],
       ),
     );
