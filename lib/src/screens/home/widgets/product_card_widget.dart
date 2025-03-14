@@ -23,8 +23,8 @@ class ProductCardWidget extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  'assets/coffee.jpg',
-                  fit: BoxFit.fill,
+                  'assets/coffee-${product.id}.jpg',
+                  fit: BoxFit.cover,
                   height: 140,
                   width: double.infinity,
                 ),
