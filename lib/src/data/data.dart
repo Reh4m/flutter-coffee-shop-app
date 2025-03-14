@@ -18,7 +18,7 @@ class Coffees {
   static List<CoffeeDrink> coffeesList = [
     CoffeeDrink(
       id: 1,
-      category: Categories.categoriesList[0],
+      category: Categories.categoriesList[1],
       name: 'Caramel Macchiato',
       prices: {
         DrinkSize.small: 3.99,
@@ -29,7 +29,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 2,
-      category: Categories.categoriesList[0],
+      category: Categories.categoriesList[1],
       name: 'Hazelnut Macchiato',
       prices: {
         DrinkSize.small: 3.99,
@@ -40,7 +40,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 3,
-      category: Categories.categoriesList[0],
+      category: Categories.categoriesList[1],
       name: 'Vanilla Macchiato',
       prices: {
         DrinkSize.small: 3.99,
@@ -51,7 +51,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 4,
-      category: Categories.categoriesList[1],
+      category: Categories.categoriesList[2],
       name: 'Caramel Latte',
       prices: {
         DrinkSize.small: 3.99,
@@ -62,7 +62,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 5,
-      category: Categories.categoriesList[1],
+      category: Categories.categoriesList[2],
       name: 'Hazelnut Latte',
       prices: {
         DrinkSize.small: 3.99,
@@ -73,7 +73,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 6,
-      category: Categories.categoriesList[1],
+      category: Categories.categoriesList[2],
       name: 'Vanilla Latte',
       prices: {
         DrinkSize.small: 3.99,
@@ -84,7 +84,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 7,
-      category: Categories.categoriesList[2],
+      category: Categories.categoriesList[3],
       name: 'Caramel Americano',
       prices: {
         DrinkSize.small: 3.99,
@@ -95,7 +95,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 8,
-      category: Categories.categoriesList[2],
+      category: Categories.categoriesList[3],
       name: 'Hazelnut Americano',
       prices: {
         DrinkSize.small: 3.99,
@@ -106,7 +106,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 9,
-      category: Categories.categoriesList[2],
+      category: Categories.categoriesList[3],
       name: 'Vanilla Americano',
       prices: {
         DrinkSize.small: 3.99,
@@ -117,7 +117,7 @@ class Coffees {
     ),
     CoffeeDrink(
       id: 10,
-      category: Categories.categoriesList[3],
+      category: Categories.categoriesList[4],
       name: 'Caramel Cappuccino',
       prices: {
         DrinkSize.small: 3.99,
