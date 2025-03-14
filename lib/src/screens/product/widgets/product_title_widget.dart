@@ -60,10 +60,12 @@ class ProductTitleWidget extends StatelessWidget {
       color: Color.fromRGBO(237, 237, 237, 0.5),
       margin: EdgeInsets.zero,
       elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Center(child: Icon(icon, color: LightTheme.primaryColor)),
+        padding: const EdgeInsets.all(10.0),
+        child: Center(
+          child: Icon(icon, size: 20, color: LightTheme.primaryColor),
+        ),
       ),
     );
   }
