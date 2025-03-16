@@ -26,7 +26,7 @@ class DriverInfoWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),
       child: Image.asset(
-        'assets/coffee.jpg',
+        'assets/picture-1.jpg',
         fit: BoxFit.cover,
         height: 56,
         width: 56,
