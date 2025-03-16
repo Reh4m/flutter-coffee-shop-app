@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/delivery/delivery_screen.dart';
 import 'package:coffe_shop_app/src/screens/get_started_screen.dart';
 import 'package:coffe_shop_app/src/screens/home/home_screen.dart';
 import 'package:coffe_shop_app/src/screens/order/order_screen.dart';
@@ -15,6 +16,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => OrderScreen());
       case ('/product-details'):
         return MaterialPageRoute(builder: (_) => ProductDetailScreen());
+      case ('/delivery-details'):
+        return MaterialPageRoute(builder: (_) => DeliveryScreen());
       default:
         return MaterialPageRoute(
           builder:
