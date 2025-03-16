@@ -11,7 +11,7 @@ class DeliveryScreen extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           fit: StackFit.expand,
-          children: <Widget>[_buildTopBar(), BottomSheetWidget()],
+          children: <Widget>[BottomSheetWidget(), _buildTopBar()],
         ),
       ),
     );
