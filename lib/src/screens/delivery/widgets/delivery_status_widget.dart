@@ -29,15 +29,26 @@ class _DeliveryStatusWidgetState extends State<DeliveryStatusWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         for (int i = 0; i < 4; i++)
-          Container(
-            margin: const EdgeInsets.all(10),
-            width: MediaQuery.of(context).size.width / 4 - 30,
-            height: 5,
-            decoration: BoxDecoration(
-              color: i == 3 ? LightTheme.lightGrey : Color(0xFF36C07E),
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
+          i < 3
+              ? Container(
+                margin: const EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width / 4 - 30,
+                height: 5,
+                decoration: BoxDecoration(
+                  color: Color(0xFF36C07E),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              )
+              : Container(
+                margin: const EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width / 4 - 30,
+                height: 5,
+                child: LinearProgressIndicator(
+                  color: Color(0xFF36C07E),
+                  backgroundColor: LightTheme.lightGrey,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
       ],
     );
   }
