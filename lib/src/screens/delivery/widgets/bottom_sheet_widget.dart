@@ -1,3 +1,4 @@
+import 'package:coffe_shop_app/src/screens/delivery/widgets/time_left_widget.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:expandable_bottom_sheet/expandable_bottom_sheet.dart';
 import 'package:flutter/material.dart';
@@ -55,51 +56,9 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
-          _buildTimeLeft(),
+          TimeLeftWidget(),
           _buildDeliveryStatus(),
           _buildDriverInfo(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTimeLeft() {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            '10 minutes left',
-            style: TextStyle(
-              color: LightTheme.textColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 5),
-          RichText(
-            text: TextSpan(
-              style: const TextStyle(
-                color: LightTheme.textLightColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-              children: <TextSpan>[
-                TextSpan(text: 'Delivery to '),
-                TextSpan(
-                  text: 'John Doe',
-                  style: const TextStyle(
-                    color: LightTheme.textColor,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
         ],
       ),
     );
