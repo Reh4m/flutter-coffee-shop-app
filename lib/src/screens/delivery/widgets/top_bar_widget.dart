@@ -9,7 +9,10 @@ class TopBarWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        _iconContainer(Icons.arrow_back_ios),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: _iconContainer(Icons.arrow_back_ios),
+        ),
         _iconContainer(Icons.gps_fixed_rounded),
       ],
     );
