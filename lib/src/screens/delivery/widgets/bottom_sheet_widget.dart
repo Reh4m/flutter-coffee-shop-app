@@ -16,7 +16,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
   @override
   Widget build(BuildContext context) {
     return ExpandableBottomSheet(
-      persistentContentHeight: 0,
+      persistentContentHeight: MediaQuery.of(context).size.height * 0.15,
 
       background: Container(),
 
