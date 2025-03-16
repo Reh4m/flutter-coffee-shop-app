@@ -18,11 +18,22 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
     return ExpandableBottomSheet(
       persistentContentHeight: MediaQuery.of(context).size.height * 0.15,
 
-      background: Container(),
+      background: _buildBackground(),
 
       persistentHeader: _buildPersistentHeader(),
 
       expandableContent: _buildDeliveryDetails(),
+    );
+  }
+
+  Widget _buildBackground() {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/maps.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 
