@@ -57,7 +57,7 @@ class BottomBarWidget extends StatelessWidget {
           ),
           SizedBox(height: 15),
           MaterialButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(context, '/delivery-details'),
             minWidth: Size.infinite.width,
             padding: const EdgeInsets.symmetric(vertical: 20),
             elevation: 0,
