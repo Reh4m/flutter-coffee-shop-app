@@ -49,7 +49,7 @@ class _DeliveryMethodSwitchWidgetState
           local.animationValue,
         ),
         fontSize: 18,
-        fontWeight: FontWeight.w500,
+        fontWeight: local.value ? FontWeight.w600 : FontWeight.w400,
       ),
     );
   }
