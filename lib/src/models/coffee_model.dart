@@ -16,5 +16,6 @@ class CoffeeDrink extends Product {
     required this.prices,
     super.imagePath,
     super.description,
+    super.rating,
   });
 }

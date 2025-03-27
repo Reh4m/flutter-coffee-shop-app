@@ -6,6 +6,7 @@ abstract class Product {
   final Category category;
   final String? description;
   final String? imagePath;
+  final double? rating;
 
   Product({
     required this.id,
@@ -13,5 +14,6 @@ abstract class Product {
     required this.category,
     this.description,
     this.imagePath,
+    this.rating,
   });
 }
