@@ -26,6 +26,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.5,
     ),
     CoffeeDrink(
       id: 2,
@@ -37,6 +38,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 3.5,
     ),
     CoffeeDrink(
       id: 3,
@@ -48,6 +50,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.8,
     ),
     CoffeeDrink(
       id: 4,
@@ -59,6 +62,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.9,
     ),
     CoffeeDrink(
       id: 5,
@@ -70,6 +74,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 5.0,
     ),
     CoffeeDrink(
       id: 6,
@@ -81,6 +86,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 3.5,
     ),
     CoffeeDrink(
       id: 7,
@@ -92,6 +98,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.7,
     ),
     CoffeeDrink(
       id: 8,
@@ -103,6 +110,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.9,
     ),
     CoffeeDrink(
       id: 9,
@@ -114,6 +122,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.3,
     ),
     CoffeeDrink(
       id: 10,
@@ -125,6 +134,7 @@ class Coffees {
         DrinkSize.large: 5.99,
       },
       tempareture: Tempareture.hot,
+      rating: 4.1,
     ),
   ];
 }
