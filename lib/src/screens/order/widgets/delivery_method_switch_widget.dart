@@ -17,7 +17,7 @@ class _DeliveryMethodSwitchWidgetState
   @override
   Widget build(BuildContext context) {
     return AnimatedToggleSwitch<bool>.size(
-      height: 45,
+      height: 40,
       current: value,
       values: const [true, false],
       iconOpacity: 1.0,
