@@ -19,15 +19,52 @@ class ProductCardWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  'assets/coffee-${product.id}.jpg',
-                  fit: BoxFit.cover,
-                  height: 140,
-                  width: double.infinity,
-                ),
+            children: <Widget>[
+              Stack(
+                fit: StackFit.passthrough,
+                children: [
+                  Container(
+                    height: 140,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage('assets/coffee-${product.id}.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 0, 0, 0.3),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          topRight: Radius.circular(15),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.star, color: Color(0xFFFBBE21), size: 15),
+                          const SizedBox(width: 5),
+                          Text(
+                            product.rating.toString(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
