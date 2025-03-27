@@ -6,69 +6,64 @@ class SearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              height: 64,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: LightTheme.darkGrey,
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black87,
-                    blurRadius: 100,
-                    spreadRadius: 1,
-                  ),
-                ],
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: LightTheme.darkGrey,
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black87,
+                  blurRadius: 100,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+            child: TextFormField(
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.w200,
               ),
-              child: TextField(
-                style: TextStyle(
+              decoration: InputDecoration(
+                hintText: "Search Coffee",
+                hintStyle: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w200,
+                  color: LightTheme.textLightColor,
+                  fontWeight: FontWeight.w400,
                 ),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Search Coffee",
-                  hintStyle: TextStyle(
-                    fontSize: 16,
-                    color: LightTheme.textLightColor,
-                    fontWeight: FontWeight.w200,
-                  ),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 20,
-                  ),
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.only(left: 20, right: 15),
-                    child: Icon(Icons.search, color: Colors.white),
-                  ),
+                prefixIcon: Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Icon(Icons.search, color: Colors.white),
                 ),
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                ),
+                contentPadding: EdgeInsets.all(17),
               ),
             ),
           ),
-          SizedBox(width: 15),
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 0,
-            padding: EdgeInsets.zero,
-            elevation: 0,
-            color: LightTheme.primaryColor,
-            textColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Icon(Icons.settings),
-            ),
+        ),
+        SizedBox(width: 15),
+        MaterialButton(
+          onPressed: () {},
+          minWidth: 0,
+          padding: EdgeInsets.zero,
+          elevation: 0,
+          color: LightTheme.primaryColor,
+          textColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
-        ],
-      ),
+          child: Padding(
+            padding: EdgeInsets.all(17.0),
+            child: Icon(Icons.settings),
+          ),
+        ),
+      ],
     );
   }
 }
