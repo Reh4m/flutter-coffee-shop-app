@@ -74,8 +74,8 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildGradientContainer() {
-    const double locationHeight = 91;
-    const double searchHeight = 84;
+    const double locationHeight = 90;
+    const double searchHeight = 78;
     const double bannerHeight = 173;
     const double spacingBetweenElements = 20;
     const double gradientHeight =
