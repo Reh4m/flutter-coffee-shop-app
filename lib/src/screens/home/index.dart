@@ -55,13 +55,13 @@ class HomeScreenState extends State<HomeScreen> {
                       _buildCategories(),
                       _buildProducts(),
                       // Extra space to avoid the last element to be hidden by the bottom bar
-                      SizedBox(height: bottomBarHeight),
+                      const SizedBox(height: bottomBarHeight),
                     ],
                   ),
                 ],
               ),
             ),
-            Positioned(
+            const Positioned(
               bottom: 0,
               left: 0,
               right: 0,
@@ -102,7 +102,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
-      child: LocationCardWidget(),
+      child: const LocationCardWidget(),
     );
   }
 
@@ -110,7 +110,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
-      child: SearchWidget(),
+      child: const SearchWidget(),
     );
   }
 
@@ -126,7 +126,7 @@ class HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.cover,
         ),
       ),
-      child: BannerWidget(),
+      child: const BannerWidget(),
     );
   }
 
