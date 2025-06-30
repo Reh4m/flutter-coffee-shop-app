@@ -73,7 +73,7 @@ class GetStartedScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     PrimaryButtonWidget(
                       text: 'Get Started',
-                      onPressed: () => Navigator.pushNamed(context, '/home'),
+                      onPressed: () => Navigator.pushNamed(context, '/'),
                       width: size.width,
                     ),
                   ],
