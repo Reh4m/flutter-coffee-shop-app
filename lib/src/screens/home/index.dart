@@ -8,14 +8,9 @@ import 'package:coffe_shop_app/src/widgets/bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => HomeScreenState();
-}
-
-class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     const double bottomBarHeight = 94;
