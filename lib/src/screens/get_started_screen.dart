@@ -1,5 +1,5 @@
-import 'package:coffe_shop_app/src/screens/home/home_screen.dart';
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/primary_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -36,12 +36,12 @@ class GetStartedScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 500,
+            top: size.height * 0.6,
             bottom: 0,
             child: Container(
               height: size.height,
               width: size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.transparent,
                 boxShadow: const [
                   BoxShadow(color: Colors.black, blurRadius: 100),
@@ -52,45 +52,29 @@ class GetStartedScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       'Fall in Love with Coffe in Blissful Delight!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 42,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
-                        height: 1.5,
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       'Welcome to our cozy coffe corner, where every cup is a delightful for you.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
                         color: LightTheme.textLightColor,
-                        // height: 1.5,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    MaterialButton(
-                      onPressed:
-                          () => Navigator.of(context).push(_createRoute()),
-                      minWidth: Size.infinite.width,
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      color: LightTheme.primaryColor,
-                      child: Text(
-                        'Get Started',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    const SizedBox(height: 20),
+                    PrimaryButtonWidget(
+                      text: 'Get Started',
+                      onPressed: () => Navigator.pushNamed(context, '/home'),
+                      width: size.width,
                     ),
                   ],
                 ),
@@ -99,27 +83,6 @@ class GetStartedScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Route _createRoute() {
-    return PageRouteBuilder(
-      pageBuilder:
-          (context, animation, secondaryAnimation) => const HomeScreen(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        const begin = Offset(0.0, 1.0);
-        const end = Offset.zero;
-        const curve = Curves.ease;
-
-        var tween = Tween(
-          begin: begin,
-          end: end,
-        ).chain(CurveTween(curve: curve));
-
-        final offsetAnimation = animation.drive(tween);
-
-        return SlideTransition(position: offsetAnimation, child: child);
-      },
     );
   }
 }
