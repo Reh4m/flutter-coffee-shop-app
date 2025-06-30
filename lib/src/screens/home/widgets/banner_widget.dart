@@ -6,19 +6,24 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Card(
-          color: LightTheme.errorColor,
-          margin: EdgeInsets.zero,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Container(
-            padding: const EdgeInsets.all(6),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        image: const DecorationImage(
+          image: AssetImage('assets/banner.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              color: LightTheme.errorColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: const Text(
               'Promo',
               style: TextStyle(
@@ -28,13 +33,8 @@ class BannerWidget extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        const SizedBox(height: 10),
-        Card(
-          color: Colors.transparent,
-          margin: EdgeInsets.zero,
-          elevation: 0,
-          child: const Text(
+          const SizedBox(height: 10),
+          const Text(
             'Buy one get one FREE',
             style: TextStyle(
               color: Colors.white,
@@ -43,8 +43,8 @@ class BannerWidget extends StatelessWidget {
               backgroundColor: Color(0xFF222222),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

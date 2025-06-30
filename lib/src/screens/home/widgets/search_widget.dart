@@ -10,7 +10,8 @@ class SearchWidget extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Container(
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: const BoxDecoration(
               color: LightTheme.darkGrey,
               borderRadius: BorderRadius.all(Radius.circular(15)),
               boxShadow: [
@@ -22,46 +23,27 @@ class SearchWidget extends StatelessWidget {
               ],
             ),
             child: TextFormField(
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.w200,
-              ),
-              decoration: InputDecoration(
-                hintText: "Search Coffee",
-                hintStyle: TextStyle(
-                  fontSize: 16,
-                  color: LightTheme.textLightColor,
-                  fontWeight: FontWeight.w400,
-                ),
-                prefixIcon: Padding(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Icon(Icons.search, color: Colors.white),
-                ),
-                border: UnderlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                ),
-                contentPadding: EdgeInsets.all(17),
+              style: const TextStyle(color: Colors.white),
+              decoration: const InputDecoration(
+                icon: Icon(Icons.search, color: LightTheme.textLightColor),
+                hintText: 'Search coffee',
+                hintStyle: TextStyle(color: LightTheme.textLightColor),
+                border: InputBorder.none,
               ),
             ),
           ),
         ),
-        SizedBox(width: 15),
-        MaterialButton(
+        const SizedBox(width: 20),
+        FilledButton(
           onPressed: () {},
-          minWidth: 0,
-          padding: EdgeInsets.zero,
-          elevation: 0,
-          color: LightTheme.primaryColor,
-          textColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+          style: FilledButton.styleFrom(
+            backgroundColor: LightTheme.primaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            padding: const EdgeInsets.all(20),
           ),
-          child: Padding(
-            padding: EdgeInsets.all(17.0),
-            child: Icon(Icons.settings),
-          ),
+          child: const Icon(Icons.tune, size: 24),
         ),
       ],
     );

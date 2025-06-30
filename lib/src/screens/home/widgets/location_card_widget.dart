@@ -6,38 +6,29 @@ class LocationCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const Text(
-            'Location',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.normal,
-              color: LightTheme.textLightColor,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              const Text(
-                'Bilzen, Tanjungbalai',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFD8D8D8),
-                  fontWeight: FontWeight.w600,
-                ),
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Location',
+          style: TextStyle(fontSize: 14, color: LightTheme.textLightColor),
+        ),
+        SizedBox(height: 5),
+        Row(
+          children: [
+            Text(
+              'Bilzen, Tanjungbalai',
+              style: TextStyle(
+                fontSize: 16,
+                color: Color(0xFFD8D8D8),
+                fontWeight: FontWeight.w600,
               ),
-              const SizedBox(width: 5),
-              const Icon(Icons.keyboard_arrow_down, color: Color(0xFFD8D8D8)),
-            ],
-          ),
-        ],
-      ),
+            ),
+            SizedBox(width: 5),
+            Icon(Icons.keyboard_arrow_down, color: Color(0xFFD8D8D8)),
+          ],
+        ),
+      ],
     );
   }
 }
