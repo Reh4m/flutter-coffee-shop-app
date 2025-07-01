@@ -26,12 +26,12 @@ class ProductDetailScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     TopBarWidget(
                       title: 'Detail',
                       rightIcon: Icons.favorite_border_rounded,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     ProductImageWidget(),
                     SizedBox(height: 20),
                     ProductOverviewWidget(),

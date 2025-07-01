@@ -28,9 +28,9 @@ class OrderScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     TopBarWidget(title: 'Order'),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     DeliveryMethodSwitchWidget(),
                     SizedBox(height: 20),
                     DeliveryAddressWidget(),
