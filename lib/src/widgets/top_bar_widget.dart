@@ -12,41 +12,27 @@ class TopBarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _buildIconButton(Icons.arrow_back_ios, () => Navigator.pop(context)),
-        _buildTitle(),
-        _buildRightIcon(),
+        IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back_ios),
+          color: const Color(0xFF242424),
+        ),
+        Text(
+          title,
+          style: const TextStyle(
+            color: Color(0xFF242424),
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        rightIcon != null
+            ? IconButton(
+              onPressed: () {},
+              icon: Icon(rightIcon),
+              color: const Color(0xFF242424),
+            )
+            : const SizedBox(width: 44),
       ],
     );
-  }
-
-  Widget _buildIconButton(IconData icon, VoidCallback onPressed) {
-    return IconButton(
-      onPressed: onPressed,
-      icon: Icon(icon),
-      padding: const EdgeInsets.all(10.0),
-      color: const Color(0xFF242424),
-    );
-  }
-
-  Widget _buildTitle() {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Color(0xFF242424),
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildRightIcon() {
-    return rightIcon != null
-        ? _buildIconButton(rightIcon!, () {})
-        : SizedBox(width: 44);
   }
 }
