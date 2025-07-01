@@ -6,35 +6,29 @@ class ProductRatingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(Icons.star_rounded, color: Color(0xFFFBBE21), size: 30),
-          const SizedBox(width: 5),
-          Text(
-            '4.5',
-            style: const TextStyle(
-              color: LightTheme.textColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(Icons.star_rounded, color: Color(0xFFFBBE21), size: 30),
+        const SizedBox(width: 5),
+        Text(
+          '4.5',
+          style: const TextStyle(
+            color: LightTheme.textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
           ),
-          const SizedBox(width: 5),
-          Text(
-            ' (125 Reviews)',
-            style: const TextStyle(
-              color: LightTheme.textLightColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-            ),
+        ),
+        const SizedBox(width: 5),
+        Text(
+          ' (125)',
+          style: const TextStyle(
+            color: LightTheme.textLightColor,
+            fontSize: 14,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

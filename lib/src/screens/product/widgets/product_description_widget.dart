@@ -7,33 +7,24 @@ class ProductDescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _titleWidget(),
-          const SizedBox(height: 10),
-          _descriptionWidget(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Description',
+          style: TextStyle(
+            color: LightTheme.textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 10),
+        _buildDescription(),
+      ],
     );
   }
 
-  Widget _titleWidget() {
-    return const Text(
-      'Description',
-      style: TextStyle(
-        color: LightTheme.textColor,
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-      ),
-    );
-  }
-
-  Widget _descriptionWidget() {
+  Widget _buildDescription() {
     TextStyle readMoreTextStyle = const TextStyle(
       color: LightTheme.primaryColor,
       fontSize: 16,
@@ -51,7 +42,7 @@ class ProductDescriptionWidget extends StatelessWidget {
       style: const TextStyle(
         color: LightTheme.textLightColor,
         fontSize: 16,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w200,
         height: 1.5,
       ),
       moreStyle: readMoreTextStyle,
