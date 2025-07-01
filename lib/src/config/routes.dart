@@ -1,23 +1,23 @@
-import 'package:coffe_shop_app/src/screens/delivery/delivery_screen.dart';
+import 'package:coffe_shop_app/src/screens/delivery/index.dart';
 import 'package:coffe_shop_app/src/screens/get_started_screen.dart';
-import 'package:coffe_shop_app/src/screens/home/home_screen.dart';
-import 'package:coffe_shop_app/src/screens/order/order_screen.dart';
-import 'package:coffe_shop_app/src/screens/product/product_detail_screen.dart';
+import 'package:coffe_shop_app/src/screens/home/index.dart';
+import 'package:coffe_shop_app/src/screens/order/index.dart';
+import 'package:coffe_shop_app/src/screens/product/index.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       case '/get-started':
-        return MaterialPageRoute(builder: (_) => GetStartedScreen());
-      case '/order-details':
-        return MaterialPageRoute(builder: (_) => OrderScreen());
-      case ('/product-details'):
-        return MaterialPageRoute(builder: (_) => ProductDetailScreen());
-      case ('/delivery-details'):
-        return MaterialPageRoute(builder: (_) => DeliveryScreen());
+        return MaterialPageRoute(builder: (_) => const GetStartedScreen());
+      case '/order':
+        return MaterialPageRoute(builder: (_) => const OrderScreen());
+      case ('/product'):
+        return MaterialPageRoute(builder: (_) => const ProductDetailScreen());
+      case ('/delivery'):
+        return MaterialPageRoute(builder: (_) => const DeliveryScreen());
       default:
         return MaterialPageRoute(
           builder:
