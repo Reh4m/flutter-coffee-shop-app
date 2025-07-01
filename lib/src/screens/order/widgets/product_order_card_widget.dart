@@ -1,41 +1,19 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
-class ProductOrderCardWidget extends StatefulWidget {
+class ProductOrderCardWidget extends StatelessWidget {
   const ProductOrderCardWidget({super.key});
 
   @override
-  State<ProductOrderCardWidget> createState() => _ProductOrderCardWidgetState();
-}
-
-class _ProductOrderCardWidgetState extends State<ProductOrderCardWidget> {
-  int quantity = 1;
-
-  void _incrementQuantity() {
-    setState(() => quantity += 1);
-  }
-
-  void _decrementQuantity() {
-    if (quantity > 1) {
-      setState(() => quantity -= 1);
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Row(
-        children: [
-          _buildProductImage(),
-          const SizedBox(width: 15),
-          _buildProductDetails(),
-          const Spacer(),
-          _buildQuantityControl(),
-        ],
-      ),
+    return Row(
+      children: <Widget>[
+        _buildProductImage(),
+        const SizedBox(width: 15),
+        _buildProductDetails(),
+        const Spacer(),
+        _buildQuantityControl(),
+      ],
     );
   }
 
@@ -44,7 +22,7 @@ class _ProductOrderCardWidgetState extends State<ProductOrderCardWidget> {
       width: 65,
       height: 65,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(12),
         image: const DecorationImage(
           image: AssetImage('assets/coffee.jpg'),
           fit: BoxFit.cover,
@@ -54,9 +32,9 @@ class _ProductOrderCardWidgetState extends State<ProductOrderCardWidget> {
   }
 
   Widget _buildProductDetails() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         const Text(
           'Cappuccino',
           style: TextStyle(
@@ -67,61 +45,49 @@ class _ProductOrderCardWidgetState extends State<ProductOrderCardWidget> {
         ),
         const SizedBox(height: 5),
         const Text(
-          'Medium, 2 sugar, 2 milk',
-          style: TextStyle(
-            color: LightTheme.textLightColor,
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),
+          'Deep Foam',
+          style: TextStyle(color: LightTheme.textLightColor, fontSize: 14),
         ),
       ],
     );
   }
 
   Widget _buildQuantityControl() {
-    return SizedBox(
-      width: 100,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _buildQuantityButton(
-            icon: Icons.remove,
-            onPressed: quantity == 1 ? null : _decrementQuantity,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        _quantityButton(icon: Icons.remove, onPressed: null),
+        const Text(
+          '1',
+          style: TextStyle(
+            color: Color(0xFF2A2A2A),
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
-          Text(
-            quantity.toString(),
-            style: TextStyle(
-              color: Color(0xFF2A2A2A),
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          _buildQuantityButton(icon: Icons.add, onPressed: _incrementQuantity),
-        ],
-      ),
+        ),
+        _quantityButton(icon: Icons.add, onPressed: () {}),
+      ],
     );
   }
 
-  Widget _buildQuantityButton({
+  Widget _quantityButton({
     required IconData icon,
     required VoidCallback? onPressed,
   }) {
-    return Ink(
-      height: 30,
-      width: 30,
-      decoration: const ShapeDecoration(
-        color: Colors.white,
-        shape: CircleBorder(
+    return IconButton.filled(
+      onPressed: onPressed,
+      icon: Icon(icon),
+      iconSize: 20,
+      color: const Color(0xFF2A2A2A),
+      style: IconButton.styleFrom(
+        backgroundColor: Colors.white,
+        disabledBackgroundColor: Colors.white,
+        shape: const CircleBorder(
           side: BorderSide(color: Color(0xFFF9F2ED), width: 2),
         ),
-      ),
-      child: IconButton(
-        padding: EdgeInsets.all(0),
-        icon: Icon(icon),
-        iconSize: 20,
-        color: Color(0xFF2A2A2A),
-        onPressed: onPressed,
+        minimumSize: const Size(30, 30),
+        padding: const EdgeInsets.all(5),
       ),
     );
   }

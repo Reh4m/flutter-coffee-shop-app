@@ -6,44 +6,31 @@ class PaymentSummaryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildTitle(),
-          const SizedBox(height: 15),
-          _buildSummaryRow(),
-          const SizedBox(height: 10),
-          _buildDeliveryFeeRow(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTitle() {
-    return const Text(
-      'Payment Summary',
-      style: TextStyle(
-        color: LightTheme.textColor,
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Payment Summary',
+          style: TextStyle(
+            color: LightTheme.textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 15),
+        _buildSummaryRow(),
+        const SizedBox(height: 10),
+        _buildDeliveryFeeRow(),
+      ],
     );
   }
 
   Widget _buildSummaryRow() {
-    return Row(
-      children: [
+    return const Row(
+      children: <Widget>[
         Text(
           'Subtotal',
-          style: const TextStyle(
-            color: LightTheme.textColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
+          style: const TextStyle(color: LightTheme.textColor, fontSize: 16),
         ),
         const Spacer(),
         Text(
@@ -59,15 +46,11 @@ class PaymentSummaryWidget extends StatelessWidget {
   }
 
   Widget _buildDeliveryFeeRow() {
-    return Row(
-      children: [
+    return const Row(
+      children: <Widget>[
         const Text(
           'Delivery Fee',
-          style: TextStyle(
-            color: LightTheme.textColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
+          style: TextStyle(color: LightTheme.textColor, fontSize: 16),
         ),
         const Spacer(),
         const Text(
@@ -75,7 +58,6 @@ class PaymentSummaryWidget extends StatelessWidget {
           style: TextStyle(
             color: Color(0xFF2A2A2A),
             fontSize: 16,
-            fontWeight: FontWeight.w400,
             decoration: TextDecoration.lineThrough,
           ),
         ),

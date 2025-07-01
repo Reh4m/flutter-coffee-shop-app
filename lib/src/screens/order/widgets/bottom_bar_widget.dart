@@ -1,4 +1,5 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
+import 'package:coffe_shop_app/src/widgets/primary_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarWidget extends StatelessWidget {
@@ -6,28 +7,30 @@ class BottomBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: LightTheme.cardBackgroundColor,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
         ),
       ),
       child: Column(
-        children: [
-          Row(
-            children: [
+        children: <Widget>[
+          const Row(
+            children: <Widget>[
               Icon(
                 Icons.account_balance_wallet_outlined,
                 color: LightTheme.primaryColor,
                 size: 25,
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 15),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     'Cash/Wallet',
                     style: TextStyle(
@@ -55,24 +58,11 @@ class BottomBarWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 15),
-          MaterialButton(
-            onPressed: () => Navigator.pushNamed(context, '/delivery-details'),
-            minWidth: Size.infinite.width,
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            color: LightTheme.primaryColor,
-            child: Text(
-              'Order',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+          const SizedBox(height: 15),
+          PrimaryButtonWidget(
+            onPressed: () => Navigator.pushNamed(context, '/delivery'),
+            text: 'Order',
+            width: size.width,
           ),
         ],
       ),

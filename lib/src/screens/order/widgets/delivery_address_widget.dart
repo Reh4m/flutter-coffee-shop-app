@@ -6,82 +6,53 @@ class DeliveryAddressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      margin: EdgeInsets.zero,
-      elevation: 0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildTitle(),
-          const SizedBox(height: 15),
-          _buildName(),
-          const SizedBox(height: 5),
-          _buildAddress(),
-          const SizedBox(height: 15),
-          _buildChips(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTitle() {
-    return const Text(
-      'Delivery Address',
-      style: TextStyle(
-        color: LightTheme.textColor,
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-      ),
-    );
-  }
-
-  Widget _buildName() {
-    return const Text(
-      'John Doe',
-      style: TextStyle(
-        color: LightTheme.textColor,
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),
-    );
-  }
-
-  Widget _buildAddress() {
-    return const Text(
-      '1234, Coffee Street, New York, USA',
-      style: TextStyle(
-        color: LightTheme.textLightColor,
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-      ),
-    );
-  }
-
-  Widget _buildChips() {
-    return Wrap(
-      spacing: 10,
-      children: [
-        _buildChip(
-          icon: Icons.edit_location_alt_outlined,
-          label: 'Edit Address',
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Delivery Address',
+          style: TextStyle(
+            color: LightTheme.textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
         ),
-        _buildChip(icon: Icons.notes_rounded, label: 'Add note'),
+        const SizedBox(height: 15),
+        const Text(
+          'John Doe',
+          style: TextStyle(
+            color: LightTheme.textColor,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 5),
+        const Text(
+          '1234, Coffee Street, New York, USA',
+          style: TextStyle(color: LightTheme.textLightColor, fontSize: 14),
+        ),
+        const SizedBox(height: 15),
+        Wrap(
+          spacing: 10,
+          children: [
+            _customChip(
+              icon: Icons.edit_location_alt_outlined,
+              label: 'Edit Address',
+            ),
+            _customChip(icon: Icons.notes_rounded, label: 'Add note'),
+          ],
+        ),
       ],
     );
   }
 
-  Widget _buildChip({required IconData icon, required String label}) {
+  Widget _customChip({required IconData icon, required String label}) {
     return Chip(
       avatar: Icon(icon, color: LightTheme.darkGrey),
       label: Text(label),
-      labelStyle: const TextStyle(
-        color: LightTheme.darkGrey,
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-      ),
+      labelStyle: const TextStyle(color: LightTheme.darkGrey, fontSize: 14),
       backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       deleteIcon: const Icon(Icons.edit, color: LightTheme.darkGrey),
     );
   }
