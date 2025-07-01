@@ -6,19 +6,15 @@ class DriverInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          _buildDriverPicture(),
-          const SizedBox(width: 20),
-          _buildDriverDetails(),
-          const Spacer(),
-          _buildCallButton(),
-        ],
-      ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _buildDriverPicture(),
+        const SizedBox(width: 15),
+        _buildDriverDetails(),
+        const Spacer(),
+        _buildCallButton(),
+      ],
     );
   }
 
@@ -35,21 +31,17 @@ class DriverInfoWidget extends StatelessWidget {
   }
 
   Widget _buildDriverDetails() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Brooklyn Simmons',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: 5),
         Text(
           'Personal Courier',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-            color: LightTheme.textLightColor,
-          ),
+          style: TextStyle(fontSize: 14, color: LightTheme.textLightColor),
         ),
       ],
     );

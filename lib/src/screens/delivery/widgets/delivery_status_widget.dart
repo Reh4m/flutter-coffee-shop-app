@@ -1,50 +1,41 @@
 import 'package:coffe_shop_app/src/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
-class DeliveryStatusWidget extends StatefulWidget {
+class DeliveryStatusWidget extends StatelessWidget {
   const DeliveryStatusWidget({super.key});
 
   @override
-  State<DeliveryStatusWidget> createState() => _DeliveryStatusWidgetState();
-}
-
-class _DeliveryStatusWidgetState extends State<DeliveryStatusWidget> {
-  @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        children: [
-          _buildProgressBar(),
-          const SizedBox(height: 10),
-          _buildDeliveryInfoCard(),
-        ],
-      ),
+    final Size size = MediaQuery.of(context).size;
+
+    return Column(
+      children: [
+        _buildProgressBar(size),
+        const SizedBox(height: 20),
+        _buildDeliveryStatusCard(),
+      ],
     );
   }
 
-  Widget _buildProgressBar() {
+  Widget _buildProgressBar(Size size) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         for (int i = 0; i < 4; i++)
           i < 3
               ? Container(
-                margin: const EdgeInsets.all(10),
-                width: MediaQuery.of(context).size.width / 4 - 30,
+                width: size.width / 4 - 30,
                 height: 5,
                 decoration: BoxDecoration(
-                  color: Color(0xFF36C07E),
+                  color: const Color(0xFF36C07E),
                   borderRadius: BorderRadius.circular(10),
                 ),
               )
               : Container(
-                margin: const EdgeInsets.all(10),
-                width: MediaQuery.of(context).size.width / 4 - 30,
+                width: size.width / 4 - 30,
                 height: 5,
                 child: LinearProgressIndicator(
-                  color: Color(0xFF36C07E),
+                  color: const Color(0xFF36C07E),
                   backgroundColor: LightTheme.lightGrey,
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -53,22 +44,25 @@ class _DeliveryStatusWidgetState extends State<DeliveryStatusWidget> {
     );
   }
 
-  Widget _buildDeliveryInfoCard() {
+  Widget _buildDeliveryStatusCard() {
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors.transparent,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(color: LightTheme.lightGrey, width: 1),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [_deliveryIcon(), const SizedBox(width: 20), _deliveryText()],
+        children: [
+          _deliveryStatusIcon(),
+          const SizedBox(width: 20),
+          _deliveryStatusText(),
+        ],
       ),
     );
   }
 
-  Widget _deliveryIcon() {
+  Widget _deliveryStatusIcon() {
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -80,8 +74,8 @@ class _DeliveryStatusWidgetState extends State<DeliveryStatusWidget> {
     );
   }
 
-  Widget _deliveryText() {
-    return Flexible(
+  Widget _deliveryStatusText() {
+    return const Flexible(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -89,14 +83,10 @@ class _DeliveryStatusWidgetState extends State<DeliveryStatusWidget> {
             'Delivered your order',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           Text(
             'We will deliver your goods to you in the shortes possible time.',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: LightTheme.textLightColor,
-            ),
+            style: TextStyle(fontSize: 14, color: LightTheme.textLightColor),
           ),
         ],
       ),

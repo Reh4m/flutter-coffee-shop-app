@@ -9,7 +9,7 @@ class TopBarWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        GestureDetector(
+        InkWell(
           onTap: () => Navigator.pop(context),
           child: _iconContainer(Icons.arrow_back_ios),
         ),
@@ -22,7 +22,7 @@ class TopBarWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xFFEDEDED),
+        color: const Color(0xFFEDEDED),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Icon(icon, color: LightTheme.textColor),
