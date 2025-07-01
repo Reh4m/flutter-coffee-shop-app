@@ -25,7 +25,7 @@ class PrimaryButtonWidget extends StatelessWidget {
         style: FilledButton.styleFrom(
           backgroundColor: LightTheme.primaryColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
         child: Text(
