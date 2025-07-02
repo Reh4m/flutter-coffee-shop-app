@@ -45,9 +45,8 @@ class HomeScreen extends StatelessWidget {
                       _buildCategories(),
                       const SizedBox(height: 20),
                       _buildProducts(),
-                      const SizedBox(height: 20),
                       // Extra space to avoid the last element to be hidden by the bottom bar
-                      const SizedBox(height: bottomBarHeight),
+                      const SizedBox(height: bottomBarHeight + 20),
                     ],
                   ),
                 ),
@@ -69,7 +68,7 @@ class HomeScreen extends StatelessWidget {
     const double locationHeight = 47;
     const double searchHeight = 64;
     const double bannerHeight = 161;
-    const double spacingBetweenElements = 80;
+    const double spacingBetweenElements = 100;
     const double gradientHeight =
         locationHeight +
         searchHeight +
