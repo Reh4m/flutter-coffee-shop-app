@@ -48,12 +48,12 @@ class DeliveryAddressWidget extends StatelessWidget {
 
   Widget _customChip({required IconData icon, required String label}) {
     return Chip(
-      avatar: Icon(icon, color: LightTheme.darkGrey),
+      avatar: Icon(icon, color: LightTheme.greyDarken1),
       label: Text(label),
-      labelStyle: const TextStyle(color: LightTheme.darkGrey, fontSize: 14),
+      labelStyle: const TextStyle(color: LightTheme.greyDarken1, fontSize: 14),
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      deleteIcon: const Icon(Icons.edit, color: LightTheme.darkGrey),
+      deleteIcon: const Icon(Icons.edit, color: LightTheme.greyDarken1),
     );
   }
 }

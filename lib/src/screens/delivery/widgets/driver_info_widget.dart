@@ -53,7 +53,7 @@ class DriverInfoWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: LightTheme.lightGrey, width: 1),
+        border: Border.all(color: LightTheme.greyLighten1, width: 1),
       ),
       child: const Icon(
         Icons.phone_in_talk_outlined,

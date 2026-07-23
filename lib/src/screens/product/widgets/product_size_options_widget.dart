@@ -43,7 +43,8 @@ class ProductSizeOptionsWidget extends StatelessWidget {
           color: isSelected ? const Color(0xFFF9F2ED) : Colors.white,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            color: isSelected ? LightTheme.primaryColor : LightTheme.lightGrey,
+            color:
+                isSelected ? LightTheme.primaryColor : LightTheme.greyLighten1,
             width: 1,
           ),
         ),

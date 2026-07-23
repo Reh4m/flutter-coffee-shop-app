@@ -65,7 +65,7 @@ class DeliveryScreen extends StatelessWidget {
           width: 35,
           height: 5,
           decoration: BoxDecoration(
-            color: LightTheme.lightGrey,
+            color: LightTheme.greyLighten1,
             borderRadius: BorderRadius.circular(10),
           ),
         ),

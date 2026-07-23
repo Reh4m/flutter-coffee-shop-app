@@ -12,13 +12,13 @@ class LightTheme {
   static const Color textColor = Color(0xFF313131);
   static const Color textLightColor = Color(0xFFA2A2A2);
 
-  static const Color lightGrey = Color(0xFFE3E3E3);
-  static const Color lightGrey2 = Color(0xFFEDEDED);
-  static const Color lightGrey3 = Color(0xFFD8D8D8);
+  static const Color greyLighten1 = Color(0xFFD8D8D8);
+  static const Color greyLighten2 = Color(0xFFE3E3E3);
+  static const Color greyLighten3 = Color(0xFFEDEDED);
 
-  static const Color darkGrey = Color(0xFF313131);
-  static const Color secondaryTextColor = Color(0xFF242424);
-  static const Color darkGrey3 = Color(0xFF2A2A2A);
+  static const Color greyDarken1 = Color(0xFF2A2A2A);
+  static const Color greyDarken2 = Color(0xFF242424);
+  static const Color greyDarken3 = Color(0xFF313131);
 
   static const Color errorColor = Color(0xFFED5151);
   static const Color successColor = Color(0xFF36C07E);

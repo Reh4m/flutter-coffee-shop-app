@@ -7,7 +7,7 @@ class DividerLineWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Divider(
-      color: LightTheme.lightGrey,
+      color: LightTheme.greyLighten1,
       height: 1,
       thickness: 1,
       indent: 20,

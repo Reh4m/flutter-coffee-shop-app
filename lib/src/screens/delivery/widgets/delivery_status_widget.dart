@@ -36,7 +36,7 @@ class DeliveryStatusWidget extends StatelessWidget {
                 height: 5,
                 child: LinearProgressIndicator(
                   color: const Color(0xFF36C07E),
-                  backgroundColor: LightTheme.lightGrey,
+                  backgroundColor: LightTheme.greyLighten1,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -49,7 +49,7 @@ class DeliveryStatusWidget extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: LightTheme.lightGrey, width: 1),
+        border: Border.all(color: LightTheme.greyLighten1, width: 1),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -68,7 +68,7 @@ class DeliveryStatusWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: LightTheme.lightGrey, width: 1),
+        border: Border.all(color: LightTheme.greyLighten1, width: 1),
       ),
       child: const Icon(Icons.delivery_dining, color: LightTheme.primaryColor),
     );
